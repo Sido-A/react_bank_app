@@ -15,7 +15,7 @@
   cursor: pointer;
   text-transform: uppercase;
 }
-.active {
+.active > span {
   color: #f4613a;
 }
 

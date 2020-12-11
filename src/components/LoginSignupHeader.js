@@ -11,11 +11,11 @@ function LoginSignupHeader() {
           <img src={`${logo}`} alt="" />
         </figure>
         <nav className="loginSignupHeader__right">
-          <NavLink class="loginSignupHeader__link" to="/">
+          <NavLink className="loginSignupHeader__link" to="/" exact>
             <span>Login</span>
           </NavLink>
           <span>/</span>
-          <NavLink class="loginSignupHeader__link" to="/signup">
+          <NavLink className="loginSignupHeader__link" to="/signup">
             <span>Sign up</span>
           </NavLink>
         </nav>

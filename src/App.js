@@ -25,6 +25,7 @@ function App() {
             <div className="app__inner">
               <Balance color="blue" service="loans" />
               <Transactions />
+              <Settings />
             </div>
           </Route>
           <Route path="/savings">
@@ -32,6 +33,7 @@ function App() {
             <div className="app__inner">
               <Balance color="green" service="savings" />
               <Transactions />
+              <Settings />
             </div>
           </Route>
           <Route path="/wallet">

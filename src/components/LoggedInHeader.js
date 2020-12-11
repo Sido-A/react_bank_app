@@ -1,10 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 import logo from "../img/CH.png";
 import "../css/LoggedInHeader.css";
 
 function LoggedInHeader() {
+  const history = useHistory();
+
+  // const signOut = () => {
+  //   history.push("/");
+  // };
+
   return (
     <header className="loggedInHeader">
       <div className="loggedInHeader__inner">
@@ -12,19 +18,19 @@ function LoggedInHeader() {
           <img src={`${logo}`} alt="" />
         </figure>
         <nav className="loginSignupHeader__right">
-          <NavLink class="loggedInHeader__link" to="/wallet">
+          <NavLink className="loggedInHeader__link" to="/wallet">
             <span>wallet</span>
           </NavLink>
-          <NavLink class="loggedInHeader__link" to="/savings">
+          <NavLink className="loggedInHeader__link" to="/savings">
             <span>savings</span>
           </NavLink>
-          <NavLink class="loggedInHeader__link" to="/loans">
+          <NavLink className="loggedInHeader__link" to="/loans">
             <span>loans</span>
           </NavLink>
-          <NavLink class="loggedInHeader__link" to="">
+          <NavLink className="loggedInHeader__link" to="/settings">
             <span>settings</span>
           </NavLink>
-          <NavLink class="loggedInHeader__link" to="/">
+          <NavLink className="loggedInHeader__link" to="/" exact>
             <span>sign out</span>
           </NavLink>
         </nav>
