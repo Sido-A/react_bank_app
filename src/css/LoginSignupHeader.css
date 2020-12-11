@@ -1,0 +1,34 @@
+.loginSignupHeader__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3d4046;
+  min-height: 84px;
+}
+
+.loginSignupHeader > figure {
+  margin: 0;
+}
+.loginSignupHeader__right {
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.loginSignupHeader__link {
+  color: #fff;
+  text-decoration: none;
+  margin: 16px;
+}
+.loginSignupHeader__link:visited {
+  color: #fff;
+}
+
+.active {
+  color: #f4613a;
+  border-bottom: 1px solid #f4613a;
+}
+
+.loginSignupHeader__link:hover {
+  color: #f4613a;
+}

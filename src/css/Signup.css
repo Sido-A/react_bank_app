@@ -1,0 +1,41 @@
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 120vh;
+}
+
+.signup__inner {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#3d4046 100%, #3d4046 0%);
+  min-height: 639px;
+  border-radius: 7px;
+  width: 466px;
+}
+
+.signup__header {
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em;
+  border-bottom: 2px solid #f4613a;
+}
+
+.signup__header a {
+  cursor: pointer;
+  text-decoration: none;
+}
+.signup__header a:visited {
+  color: #fff;
+}
+
+.signup__header a:hover {
+  color: #f4613a;
+}
+.signup__formInner {
+  width: 60%;
+  margin: 0 auto;
+}

@@ -1,0 +1,9 @@
+.payInOutButton__right {
+  color: #fff;
+  text-align: right;
+  cursor: pointer;
+}
+
+.payInOutButton__right > figure {
+  margin: 0;
+}

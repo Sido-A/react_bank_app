@@ -1,0 +1,69 @@
+.transactions {
+  color: #fff;
+  background: linear-gradient(#3d4046 100%, #3d4046 0%);
+  border-radius: 7px;
+  min-height: 50vh;
+}
+
+.transactions__inner {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.transactions__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #c2c2c2;
+  padding: 1em 0;
+  margin-bottom: 1.75em;
+}
+.transactions__left {
+  display: flex;
+  justify-content: space-between;
+}
+.arrows {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 1em;
+  cursor: pointer;
+}
+
+.transactions__redArrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid red;
+}
+
+.transactions__redArrow:hover {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid rgb(243, 97, 97);
+}
+.transactions__greenArrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid green;
+}
+
+.transactions__greenArrow:hover {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid rgb(52, 158, 52);
+}
+
+.symbol {
+  padding-right: 1em;
+}
+.minus {
+  color: red;
+}
+
+.plus {
+  color: green;
+}

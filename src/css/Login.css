@@ -1,0 +1,79 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.login__inner {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#3d4046 100%, #3d4046 0%);
+  min-height: 399px;
+  border-radius: 7px;
+  width: 466px;
+}
+
+.login__header {
+  text-align: right;
+  padding: 1.5em;
+  border-bottom: 2px solid #f4613a;
+}
+
+.login__header > span {
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.login__loginForm {
+  width: 100%;
+}
+
+.login__loginFormInner {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 2em auto;
+}
+.login__loginFormInner > label {
+  margin-bottom: 7px;
+}
+
+.loginInput {
+  color: #fff;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #f4613a;
+  padding: 5px 0;
+}
+
+.login__loginFormInner > .login__email {
+  margin-bottom: 1.313em;
+}
+.login__loginFormInner > .login__password {
+  margin-bottom: 2.625em;
+}
+
+.login__loginFormInner > .login__submit {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.4em;
+  border-radius: 7px;
+  margin-bottom: 1.75em;
+}
+
+input[type="submit"] {
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  border-style: hidden;
+}
+
+.login__signup {
+  color: #f4613a;
+  display: flex;
+  justify-content: center;
+}

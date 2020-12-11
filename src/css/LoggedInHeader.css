@@ -1,0 +1,34 @@
+.loggedInHeader__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3d4046;
+  min-height: 84px;
+}
+
+.loggedInHeader > figure {
+  margin: 0;
+}
+
+.loggedInHeader__right {
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.active {
+  color: #f4613a;
+}
+
+.loggedInHeader__link {
+  color: #fff;
+  text-decoration: none;
+  margin: 16px;
+}
+.loggedInHeader__link:visited {
+  color: #fff;
+}
+
+.loggedInHeader__link:hover {
+  color: #f4613a;
+  transition: all 0.4s;
+}

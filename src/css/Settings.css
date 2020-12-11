@@ -1,0 +1,26 @@
+.settings {
+  width: 320px;
+  background: linear-gradient(#3d4046 100%, #3d4046 0%);
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 83px;
+  border-top: 3px solid #f4613a;
+}
+.settings__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.settings__inner {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.settingForm > p {
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-bottom: 2px solid #f4613a;
+  padding-bottom: 1em;
+}
