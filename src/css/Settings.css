@@ -2,12 +2,14 @@
   width: 320px;
   background: linear-gradient(#3d4046 100%, #3d4046 0%);
   color: #fff;
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
+  right: 0px;
   margin-top: 83px;
   border-top: 3px solid #f4613a;
+  transition: all 0.4s ease-in;
 }
+
 .settings__header {
   display: flex;
   justify-content: space-between;

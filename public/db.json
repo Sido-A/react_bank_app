@@ -3,10 +3,10 @@
   "users": [
     {
       "id": 1,
-      "firstname": "Florence",
-      "lastname": "Nway",
-      "email": "flo@email.com",
-      "password": "flo",
+      "firstname": "Sido",
+      "lastname": "Abe",
+      "email": "sido@email.com",
+      "password": "sido",
       "avator": "url",
       "wallet_balance": 3830.21,
       "saving_balance": 12000.53,

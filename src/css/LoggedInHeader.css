@@ -15,6 +15,14 @@
   cursor: pointer;
   text-transform: uppercase;
 }
+.loggedInHeader__right > ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.loggedInHeader__right > ul > li > a:active {
+  color: red;
+}
 .active > span {
   color: #f4613a;
 }

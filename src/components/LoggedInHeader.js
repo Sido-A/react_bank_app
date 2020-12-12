@@ -4,7 +4,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import logo from "../img/CH.png";
 import "../css/LoggedInHeader.css";
 
-function LoggedInHeader() {
+function LoggedInHeader({ toggle }) {
   const history = useHistory();
 
   // const signOut = () => {
@@ -17,22 +17,34 @@ function LoggedInHeader() {
         <figure className="loggedInHeader__logo">
           <img src={`${logo}`} alt="" />
         </figure>
-        <nav className="loginSignupHeader__right">
-          <NavLink className="loggedInHeader__link" to="/wallet">
-            <span>wallet</span>
-          </NavLink>
-          <NavLink className="loggedInHeader__link" to="/savings">
-            <span>savings</span>
-          </NavLink>
-          <NavLink className="loggedInHeader__link" to="/loans">
-            <span>loans</span>
-          </NavLink>
-          <NavLink className="loggedInHeader__link" to="/settings">
-            <span>settings</span>
-          </NavLink>
-          <NavLink className="loggedInHeader__link" to="/" exact>
-            <span>sign out</span>
-          </NavLink>
+        <nav className="loggedInHeader__right">
+          <ul>
+            <li>
+              <NavLink className="loggedInHeader__link" to="/wallet">
+                <span>wallet</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="loggedInHeader__link" to="/savings">
+                <span>savings</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="loggedInHeader__link" to="/loans">
+                <span>loans</span>
+              </NavLink>
+            </li>
+            <li>
+              <a onClick={toggle} className="loggedInHeader__link">
+                <span>settings</span>
+              </a>
+            </li>
+            <li>
+              <NavLink className="loggedInHeader__link" to="/" exact>
+                <span>sign out</span>
+              </NavLink>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>

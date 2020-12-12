@@ -8,7 +8,7 @@ function Settings() {
   const block = "Block account";
   const round = "Round expenses and put to savings account";
   return (
-    <div className="settings">
+    <div className={`settings `}>
       <div className="settings__inner">
         <div className="settings__header">
           <span>Back</span>

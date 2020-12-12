@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,32 +16,52 @@ import Transactions from "./components/Transactions";
 import Settings from "./components/Settings";
 
 function App() {
+  const [data, setData] = useState();
+  const [showSettings, setShowSettings] = useState(false);
+  const toggleSettings = () => {
+    setShowSettings(!showSettings);
+  };
+
+  useEffect(() => {
+    // const fetchData = async () => {
+    //   await fetch("db.json")
+    //     .then((res) => res.json())
+    //     .then((res) => setData(res));
+    // };
+    // fetchData();
+
+    fetch("db.json")
+      .then((res) => res.json())
+      .then((res) => setData(res));
+  }, []);
+
+  console.log(data);
   return (
     <Router>
       <div className="app">
         <Switch>
           <Route path="/loans">
-            <LoggedInHeader />
+            <LoggedInHeader toggle={toggleSettings} />
             <div className="app__inner">
               <Balance color="blue" service="loans" />
-              <Transactions />
-              <Settings />
+              <Transactions transactions={data} />
+              {showSettings && <Settings />}
             </div>
           </Route>
           <Route path="/savings">
-            <LoggedInHeader />
+            <LoggedInHeader toggle={toggleSettings} />
             <div className="app__inner">
               <Balance color="green" service="savings" />
-              <Transactions />
-              <Settings />
+              <Transactions transactions={data} />
+              {showSettings && <Settings />}
             </div>
           </Route>
           <Route path="/wallet">
-            <LoggedInHeader />
+            <LoggedInHeader toggle={toggleSettings} />
             <div className="app__inner">
               <Balance color="orange" service="wallet" />
-              <Transactions />
-              <Settings />
+              <Transactions transactions={data} />
+              {showSettings && <Settings />}
             </div>
           </Route>
           <Route path="/signup">

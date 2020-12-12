@@ -31,7 +31,7 @@ function Transactions() {
           </div>
         </div>
         <dl className="transactions__items">
-          {transactions.map((tran) => (
+          {transactions?.map((tran) => (
             <Transaction tran={tran} />
           ))}
         </dl>
