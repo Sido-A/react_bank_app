@@ -2,8 +2,10 @@ import React from "react";
 import "../css/Transactions.css";
 import Transaction from "./Transaction";
 
-function Transactions() {
-  const transactions = [
+function Transactions({ transactionsData }) {
+  const transactions = transactionsData;
+  //   console.log(transactions[0]);
+  const test = [
     {
       transaction: "Mark & Spanser",
       debitcredit: "+",
@@ -31,7 +33,7 @@ function Transactions() {
           </div>
         </div>
         <dl className="transactions__items">
-          {transactions?.map((tran) => (
+          {transactions.map((tran) => (
             <Transaction tran={tran} />
           ))}
         </dl>

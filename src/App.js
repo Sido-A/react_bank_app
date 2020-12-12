@@ -16,25 +16,21 @@ import Transactions from "./components/Transactions";
 import Settings from "./components/Settings";
 
 function App() {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [showSettings, setShowSettings] = useState(false);
   const toggleSettings = () => {
     setShowSettings(!showSettings);
   };
 
   useEffect(() => {
-    // const fetchData = async () => {
-    //   await fetch("db.json")
-    //     .then((res) => res.json())
-    //     .then((res) => setData(res));
-    // };
-    // fetchData();
-
-    fetch("db.json")
-      .then((res) => res.json())
-      .then((res) => setData(res));
+    const db = "db.json";
+    const fetchData = async () => {
+      await fetch(db)
+        .then((res) => res.json())
+        .then((res) => setData(res.users));
+    };
+    fetchData();
   }, []);
-
   console.log(data);
   return (
     <Router>
@@ -44,7 +40,7 @@ function App() {
             <LoggedInHeader toggle={toggleSettings} />
             <div className="app__inner">
               <Balance color="blue" service="loans" />
-              <Transactions transactions={data} />
+              <Transactions transactionsData={data} />
               {showSettings && <Settings />}
             </div>
           </Route>
@@ -52,7 +48,7 @@ function App() {
             <LoggedInHeader toggle={toggleSettings} />
             <div className="app__inner">
               <Balance color="green" service="savings" />
-              <Transactions transactions={data} />
+              <Transactions transactionsData={data} />
               {showSettings && <Settings />}
             </div>
           </Route>
@@ -60,7 +56,7 @@ function App() {
             <LoggedInHeader toggle={toggleSettings} />
             <div className="app__inner">
               <Balance color="orange" service="wallet" />
-              <Transactions transactions={data} />
+              <Transactions transactionsData={data} />
               {showSettings && <Settings />}
             </div>
           </Route>
