@@ -4,6 +4,11 @@ import "../css/Balance.css";
 import PayInOutButton from "./PayInOutButton";
 import avatar from "../img/man_1.png";
 import { userDataContext } from "../Context";
+import {
+  patchWalletBalance,
+  patchWalletTransactions,
+  patchServiceOrLoansBalance,
+} from "../fetch";
 
 function Balance({ color, service, setData }) {
   const [show, setShow] = useState(false);
@@ -14,15 +19,10 @@ function Balance({ color, service, setData }) {
   const { state, dispatch } = userContext;
   const userData = state.user[0];
 
-  useEffect(() => {
-    const db = "http://localhost:3001";
-    const fetchData = async () => {
-      await fetch(`${db}/users`)
-        .then((res) => res.json())
-        .then((res) => setData(res));
-    };
-    fetchData();
-  }, [state]);
+  // useEffect(() => {
+  //   // console.log("state.user", state.user);
+  //   // console.log("state.user[0]", state.user[0]);
+  // }, [state]);
 
   const showAndHide = (plusOrMinus, serviceType) => {
     setInOrOut(plusOrMinus);
@@ -34,35 +34,46 @@ function Balance({ color, service, setData }) {
     setInputAmount(e.target.value);
   };
 
-  const calculateWalletAmount = (a, b, type) => {
+  const calculateWalletAmount = (walletBalance, amount, type) => {
     if (type === "plus") {
-      const amount = (a + b).toFixed(2);
+      const totalWalletAmount = (walletBalance + amount).toFixed(2);
+      const parsedTotalWalletAmount = parseFloat(totalWalletAmount);
+
+      patchWalletBalance(userData.id, parsedTotalWalletAmount);
+
       dispatch({
         type: "WALLET_BALANCE",
-        payload: amount,
+        payload: totalWalletAmount,
       });
+      console.log("AFTER RETURN");
     } else {
-      const amount = (a - b).toFixed(2);
+      const totalWalletAmount = (walletBalance - amount).toFixed(2);
+      patchWalletBalance(userData.id, totalWalletAmount);
       dispatch({
         type: "WALLET_BALANCE",
-        payload: amount,
+        payload: totalWalletAmount,
       });
     }
   };
 
-  const calculateBalanceAmount = (a, b, type) => {
+  const calculateServiceAndLoansBalanceAmount = (
+    currentBalance,
+    amount,
+    type
+  ) => {
     const capitalServiceType = typeOfService.toUpperCase();
     if (type === "plus") {
-      const amount = (a + b).toFixed(2);
+      const totalServiceOrLoansAmount = (currentBalance + amount).toFixed(2);
+
       dispatch({
         type: `${capitalServiceType}_BALANCE`,
-        payload: amount,
+        payload: totalServiceOrLoansAmount,
       });
     } else {
-      const amount = (a - b).toFixed(2);
+      const totalServiceOrLoansAmount = (currentBalance - amount).toFixed(2);
       dispatch({
         type: `${capitalServiceType}_BALANCE`,
-        payload: amount,
+        payload: totalServiceOrLoansAmount,
       });
     }
   };
@@ -70,27 +81,36 @@ function Balance({ color, service, setData }) {
   const submitAmount = (e) => {
     e.preventDefault();
     const currentBalance = userData[`${service}_balance`];
-    const walletBalance = userData.wallet_balance;
+    const walletBalance = parseFloat(userData.wallet_balance);
     const amount = parseFloat(inputAmount);
 
     switch (inOrOut) {
       case "+wallet":
+        const dataStructure = {
+          transaction: "From Savings",
+          debit: "+",
+          amount,
+        };
+        dispatch({
+          type: "WALLET_TRANSACTIONS",
+          payload: dataStructure,
+        });
+        patchWalletTransactions(userData.id, dataStructure);
+        // patchServiceOrLoansBalance(userData.id, dataStructure);
         calculateWalletAmount(walletBalance, amount, "plus");
-        calculateBalanceAmount(currentBalance, amount, "minus");
+        calculateServiceAndLoansBalanceAmount(currentBalance, amount, "minus");
 
         setInputAmount(0);
 
         return setShow(false);
       case "-wallet":
         calculateWalletAmount(walletBalance, amount, "minus");
-        calculateBalanceAmount(currentBalance, amount, "plus");
+        calculateServiceAndLoansBalanceAmount(currentBalance, amount, "plus");
         setInputAmount(0);
         return setShow(false);
     }
   };
 
-  console.log(userData);
-  console.log(userData[`${service}_balance`]);
   return (
     <div className="balance">
       <div className={`balance__inner`}>

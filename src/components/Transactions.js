@@ -8,6 +8,7 @@ function Transactions({ service }) {
   const { state, dispatch } = userContext;
   const userData = state.user[0];
   // console.log(`transactions`, userData[`${service}_transactions`]);
+  // console.log(`transactions service`,service);
   const transactions = userData[`${service}_transactions`];
 
   const test = [
@@ -38,7 +39,7 @@ function Transactions({ service }) {
           </div>
         </div>
         <dl className="transactions__items">
-          {transactions.map((tran) => (
+          {transactions?.map((tran) => (
             <Transaction tran={tran} />
           ))}
         </dl>

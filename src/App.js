@@ -35,7 +35,17 @@ function App() {
     };
     fetchData();
   }, []);
-  // console.log("data", data);
+
+  useEffect(() => {
+    // const db = "http://localhost:3001";
+    // const fetchData = async () => {
+    //   await fetch(`${db}/users`)
+    //     .then((res) => res.json())
+    //     .then((res) => setData(res));
+    // };
+    // fetchData();
+    console.log("data", data);
+  }, [state]);
 
   return (
     <Router>
@@ -67,11 +77,11 @@ function App() {
           </Route>
           <Route path="/signup">
             <LoginSignupHeader />
-            <Signup userData={data} />
+            <Signup userData={data} setData={setData} />
           </Route>
           <Route path="/" exact>
             <LoginSignupHeader />
-            <Login userData={data} />
+            <Login userData={data} setData={setData} />
           </Route>
         </Switch>
       </div>

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import "../css/Login.css";
 import { userDataContext } from "../Context";
 
-function Login({ userData }) {
+function Login({ userData, setData }) {
   const history = useHistory();
   const [disabled, setDisabled] = useState(true);
   const [inputForm, setInputForm] = useState({ email: "", password: "" });
@@ -31,10 +31,12 @@ function Login({ userData }) {
     // console.log(user[0]);
     if (user.length !== 0) {
       if (inputForm.password === user[0].password) {
+        setData(user[0]);
         dispatch({
           type: "LOGIN",
           payload: user[0],
         });
+
         history.push("/wallet");
       } else {
         alert("Your password or email is incorrect");
