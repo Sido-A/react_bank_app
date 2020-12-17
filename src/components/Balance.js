@@ -18,7 +18,7 @@ function Balance({ color, service, setData }) {
   const userContext = useContext(userDataContext);
   const { state, dispatch } = userContext;
   const userData = state.user[0];
-
+  console.log(state);
   // useEffect(() => {
   //   // console.log("state.user", state.user);
   //   // console.log("state.user[0]", state.user[0]);
@@ -95,7 +95,7 @@ function Balance({ color, service, setData }) {
           type: "WALLET_TRANSACTIONS",
           payload: dataStructure,
         });
-        patchWalletTransactions(userData.id, dataStructure);
+        // patchWalletTransactions(userData.id, dataStructure);
         // patchServiceOrLoansBalance(userData.id, dataStructure);
         calculateWalletAmount(walletBalance, amount, "plus");
         calculateServiceAndLoansBalanceAmount(currentBalance, amount, "minus");
