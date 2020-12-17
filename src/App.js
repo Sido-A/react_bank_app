@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,24 +14,29 @@ import Signup from "./components/Signup";
 import Balance from "./components/Balance";
 import Transactions from "./components/Transactions";
 import Settings from "./components/Settings";
+import { userDataContext } from "./Context";
 
 function App() {
   const [data, setData] = useState([]);
   const [showSettings, setShowSettings] = useState(false);
+  const userContext = useContext(userDataContext);
+  const { state, dispatch } = userContext;
+
   const toggleSettings = () => {
     setShowSettings(!showSettings);
   };
 
   useEffect(() => {
-    const db = "db.json";
+    const db = "http://localhost:3001";
     const fetchData = async () => {
-      await fetch(db)
+      await fetch(`${db}/users`)
         .then((res) => res.json())
-        .then((res) => setData(res.users));
+        .then((res) => setData(res));
     };
     fetchData();
   }, []);
-  console.log(data);
+  // console.log("data", data);
+
   return (
     <Router>
       <div className="app">
@@ -39,34 +44,34 @@ function App() {
           <Route path="/loans">
             <LoggedInHeader toggle={toggleSettings} />
             <div className="app__inner">
-              <Balance color="blue" service="loans" />
-              <Transactions transactionsData={data} />
+              <Balance color="blue" service="loans" setData={setData} />
+              <Transactions service="loans" />
               {showSettings && <Settings />}
             </div>
           </Route>
           <Route path="/savings">
             <LoggedInHeader toggle={toggleSettings} />
             <div className="app__inner">
-              <Balance color="green" service="savings" />
-              <Transactions transactionsData={data} />
+              <Balance color="green" service="savings" setData={setData} />
+              <Transactions service="savings" />
               {showSettings && <Settings />}
             </div>
           </Route>
           <Route path="/wallet">
             <LoggedInHeader toggle={toggleSettings} />
             <div className="app__inner">
-              <Balance color="orange" service="wallet" />
-              <Transactions transactionsData={data} />
+              <Balance color="orange" service="wallet" setData={setData} />
+              <Transactions service="wallet" />
               {showSettings && <Settings />}
             </div>
           </Route>
           <Route path="/signup">
             <LoginSignupHeader />
-            <Signup />
+            <Signup userData={data} />
           </Route>
           <Route path="/" exact>
             <LoginSignupHeader />
-            <Login />
+            <Login userData={data} />
           </Route>
         </Switch>
       </div>

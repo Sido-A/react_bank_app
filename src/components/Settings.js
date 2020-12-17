@@ -4,7 +4,7 @@ import ToggleButton from "./ToggleButton";
 import InputForm from "./InputForm";
 
 function Settings() {
-  const save = "Save";
+  const save = "save";
   const block = "Block account";
   const round = "Round expenses and put to savings account";
   return (

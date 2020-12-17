@@ -1,0 +1,253 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Sido",
+      "lastname": "Abe",
+      "email": "sido@email.com",
+      "password": "sido",
+      "avator": "url",
+      "wallet_balance": 3830.21,
+      "savings_balance": 12000.53,
+      "loans_balance": -1250.01,
+      "wallet_transactions": [
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark",
+          "debit": "-",
+          "amount": 9.64
+        },
+        {
+          "transaction": "Spanser",
+          "debit": "+",
+          "amount": 10.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 11.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 8.64
+        }
+      ],
+      "savings_transactions": [
+        {
+          "transaction": "Direct deposit",
+          "debit": "+",
+          "amount": 400
+        },
+        {
+          "transaction": "Direct deposit",
+          "debit": "+",
+          "amount": 350
+        },
+        {
+          "transaction": "Rounded expense",
+          "debit": "+",
+          "amount": 0.73
+        },
+        {
+          "transaction": "Rounded expense",
+          "debit": "+",
+          "amount": 0.27
+        }
+      ],
+      "loans_transactions": [
+        {
+          "transaction": "Thanks for payment",
+          "debit": "+",
+          "amount": 400
+        },
+        {
+          "transaction": "Thanks for payment",
+          "debit": "+",
+          "amount": 350
+        },
+        {
+          "transaction": "Thanks for payment",
+          "debit": "+",
+          "amount": 100
+        },
+        {
+          "transaction": "Loan",
+          "debit": "-",
+          "amount": 2100
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "firstname": "Bib",
+      "lastname": "Fern",
+      "email": "bib@email.com",
+      "password": "bib",
+      "avator": "url",
+      "wallet_balance": 53830.21,
+      "savings_balance": 12000.53,
+      "loans_balance": -1250,
+      "wallet_transactions": [
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 1.64
+        },
+        {
+          "transaction": "Mark",
+          "debit": "-",
+          "amount": 39.64
+        },
+        {
+          "transaction": "Spanser",
+          "debit": "+",
+          "amount": 100.64
+        },
+        {
+          "transaction": "Mark & Spanser",
+          "debit": "-",
+          "amount": 111.64
+        }
+      ],
+      "savings_transactions": [
+        {
+          "transaction": "Direct deposit",
+          "debit": "+",
+          "amount": 400
+        },
+        {
+          "transaction": "Direct deposit",
+          "debit": "+",
+          "amount": 350
+        },
+        {
+          "transaction": "Rounded expense",
+          "debit": "+",
+          "amount": 0.73
+        },
+        {
+          "transaction": "Rounded expense",
+          "debit": "+",
+          "amount": 0.27
+        }
+      ],
+      "loans_transactions": [
+        {
+          "transaction": "Thanks for payment",
+          "debit": "+",
+          "amount": 400
+        },
+        {
+          "transaction": "Thanks for payment",
+          "debit": "+",
+          "amount": 350
+        },
+        {
+          "transaction": "Thanks for payment",
+          "debit": "+",
+          "amount": 100
+        },
+        {
+          "transaction": "Loan",
+          "debit": "-",
+          "amount": 2100
+        }
+      ]
+    },
+    {
+      "firstname": "Fran",
+      "lastname": "Lions",
+      "email": "fl@email.com",
+      "password": "fl",
+      "avator": "",
+      "wallet_balance": 5000,
+      "savings_balance": 0,
+      "loans_balance": 0,
+      "wallet_transactions": [],
+      "savings_transactions": [],
+      "loans_transactions": [],
+      "confirmpassword": "fl",
+      "id": 3
+    }
+  ]
+}

@@ -67,9 +67,14 @@
 
 input[type="submit"] {
   color: #fff;
+  background-color: #f4613a;
   cursor: pointer;
   outline: none;
   border-style: hidden;
+}
+
+input[type="submit"]:disabled {
+  background-color: #c2c2c2;
 }
 
 .login__signup {

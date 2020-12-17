@@ -1,16 +1,10 @@
 import React from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import logo from "../img/CH.png";
 import "../css/LoggedInHeader.css";
 
 function LoggedInHeader({ toggle }) {
-  const history = useHistory();
-
-  // const signOut = () => {
-  //   history.push("/");
-  // };
-
   return (
     <header className="loggedInHeader">
       <div className="loggedInHeader__inner">

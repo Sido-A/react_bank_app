@@ -1,107 +1,112 @@
-.inputForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .inputForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.inputForm__inner {
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(#3d4046 100%, #3d4046 0%);
-  min-height: 639px;
-  border-radius: 7px;
-  width: 466px;
-}
+  .inputForm__inner {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#3d4046 100%, #3d4046 0%);
+    min-height: 639px;
+    border-radius: 7px;
+    width: 466px;
+  }
 
-.inputForm__header {
-  color: #fff;
-  font-size: 1.125rem;
-  font-weight: 700;
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5em;
-  border-bottom: 2px solid #f4613a;
-}
+  .inputForm__header {
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em;
+    border-bottom: 2px solid #f4613a;
+  }
 
-.inputForm__header a {
-  cursor: pointer;
-  text-decoration: none;
-}
-.inputForm__header a:visited {
-  color: #fff;
-}
+  .inputForm__header a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .inputForm__header a:visited {
+    color: #fff;
+  }
 
-.inputForm__header a:hover {
-  color: #f4613a;
-}
+  .inputForm__header a:hover {
+    color: #f4613a;
+  }
 
-.inputForm__signupForm {
-  width: 100%;
-}
+  .inputForm__signupForm {
+    width: 100%;
+  }
 
-.inputForm__signupFormInner {
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  margin: 2em auto;
-}
-.inputForm__signupFormInner > label {
-  margin-bottom: 7px;
-}
+  .inputForm__signupFormInner {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 2em auto;
+  }
+  .inputForm__signupFormInner > label {
+    margin-bottom: 7px;
+  }
 
-.signupInput {
-  color: #fff;
-  background-color: transparent;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid #f4613a;
-  padding: 5px 0;
-}
+  .signupInput {
+    color: #fff;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #f4613a;
+    padding: 5px 0;
+  }
 
-.inputForm__signupFormInner > .signupInput {
-  margin-bottom: 1.313em;
-}
-.inputForm__signupFormInner > .inputForm__confirmPassword {
-  margin-bottom: 2.625em;
-}
+  .inputForm__signupFormInner > .signupInput {
+    margin-bottom: 1.313em;
+  }
+  .inputForm__signupFormInner > .inputForm__confirmPassword {
+    margin-bottom: 2.625em;
+  }
 
-.inputForm__signupFormInner > .inputForm__submit {
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding: 0.4em;
-  border-radius: 7px;
+  .inputForm__signupFormInner > .inputForm__submit {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.4em;
+    border-radius: 7px;
 
-  margin-bottom: 1.75em;
-  background-color: #f4613a;
-}
-input[type="submit"] {
-  color: #fff;
-  cursor: pointer;
-  outline: none;
-  border-style: hidden;
-}
-.inputForm__signup {
-  color: #f4613a;
-  display: flex;
-  justify-content: center;
-}
+    margin-bottom: 1.75em;
+    background-color: #f4613a;
+  }
+  input[type="submit"] {
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border-style: hidden;
+    background-color: #f4613a;
+  }
 
-.inputForm__avatar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2.625em;
-}
+  input[type="submit"]:disabled {
+    background-color: #c2c2c2;
+  }
+  .inputForm__signup {
+    color: #f4613a;
+    display: flex;
+    justify-content: center;
+  }
 
-.inputForm__avatar > input[type="file"] {
-  visibility: hidden;
-  width: 0;
-}
+  .inputForm__avatar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.625em;
+  }
 
-.inputForm__avatar > label {
-  cursor: pointer;
-  border: 1px solid #f4613a;
-  background-color: #f4613a;
-  border-radius: 5px;
-  padding: 0.5em 1em;
-}
+  .inputForm__avatar > input[type="file"] {
+    visibility: hidden;
+    width: 0;
+  }
+
+  .inputForm__avatar > label {
+    cursor: pointer;
+    border: 1px solid #f4613a;
+    background-color: #f4613a;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+  }

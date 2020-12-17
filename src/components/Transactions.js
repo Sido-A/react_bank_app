@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../css/Transactions.css";
 import Transaction from "./Transaction";
+import { userDataContext } from "../Context";
 
-function Transactions({ transactionsData }) {
-  const transactions = transactionsData;
-  //   console.log(transactions[0]);
+function Transactions({ service }) {
+  const userContext = useContext(userDataContext);
+  const { state, dispatch } = userContext;
+  const userData = state.user[0];
+  // console.log(`transactions`, userData[`${service}_transactions`]);
+  const transactions = userData[`${service}_transactions`];
+
   const test = [
     {
       transaction: "Mark & Spanser",
