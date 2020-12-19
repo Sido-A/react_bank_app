@@ -37,6 +37,52 @@ const reducer = (state, action) => {
         ...state,
         user: [{ ...state.user[0], loans_balance: parseLoansPayload }],
       };
+
+    case "WALLET_TRANSACTIONS":
+      const walletTransactions = action.payload;
+      return {
+        ...state,
+        user: [
+          {
+            ...state.user[0],
+            wallet_transactions: [
+              ...state.user[0].wallet_transactions,
+              walletTransactions,
+            ],
+          },
+        ],
+      };
+
+    case "SAVINGS_TRANSACTIONS":
+      const savingsTransactions = action.payload;
+      return {
+        ...state,
+        user: [
+          {
+            ...state.user[0],
+            savings_transactions: [
+              ...state.user[0].savings_transactions,
+              savingsTransactions,
+            ],
+          },
+        ],
+      };
+
+    case "LOANS_TRANSACTIONS":
+      const loansTransactions = action.payload;
+      return {
+        ...state,
+        user: [
+          {
+            ...state.user[0],
+            loans_transactions: [
+              ...state.user[0].loans_transactions,
+              loansTransactions,
+            ],
+          },
+        ],
+      };
+
     default:
       return state;
   }

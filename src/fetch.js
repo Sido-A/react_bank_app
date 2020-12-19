@@ -34,11 +34,8 @@ const addUser = async (userData) => {
     })
     .catch((error) => error);
 };
-
-
-
+// WALLET BALANCE
 const patchWalletBalance = async (id, transactionData) => {
-  console.log("patch wallet balance");
   const requestPost = {
     method: "PATCH",
     headers: {
@@ -58,33 +55,34 @@ const patchWalletBalance = async (id, transactionData) => {
     .catch((error) => error);
 };
 
-const patchWalletTransactions = async (id, transactionData) => {
-    console.log(transactionData);
-    const requestPost = {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({ wallet_transactions: [transactionData] }),
-    };
-    return await fetch(`${URL}/users/${id}`, requestPost)
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          throw "Oops something went wrong!";
-        }
-      })
-      .catch((error) => error);
+// WALLET TRANSACTIONS
+const postWalletTransactions = async (id, transactionData) => {
+  console.log(transactionData);
+  const requestPost = {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({ wallet_transactions: transactionData }),
+  };
+  return await fetch(`${URL}/users/${id}`, requestPost)
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw "Oops something went wrong!";
+      }
+    })
+    .catch((error) => error);
 };
 
-const patchServiceOrLoansBalance = async (
+// BALANCE
+const patchSavingsOrLoansBalance = async (
   id,
   serviceBalance,
   transactionAmount
 ) => {
-  console.log(transactionAmount);
   const requestPost = {
     method: "PATCH",
     headers: {
@@ -104,9 +102,57 @@ const patchServiceOrLoansBalance = async (
     .catch((error) => error);
 };
 
+//SAVINGS OR LOANS TRANSACTIONS
+const postSavingsOrLoansServiceTransactions = async (
+  id,
+  transactionData,
+  service
+) => {
+  console.log(transactionData);
+  const requestPost = {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({ [`${service}_transactions`]: transactionData }),
+  };
+  return await fetch(`${URL}/users/${id}`, requestPost)
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw "Oops something went wrong!";
+      }
+    })
+    .catch((error) => error);
+};
+
+const postTransactions = async (id, transactionData) => {
+  console.log(transactionData);
+  const requestPost = {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(transactionData),
+  };
+  return await fetch(`${URL}/users/${id}`, requestPost)
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw "Oops something went wrong!";
+      }
+    })
+    .catch((error) => error);
+};
 export {
   addUser,
   patchWalletBalance,
-  patchWalletTransactions,
-  patchServiceOrLoansBalance,
-}
+  postWalletTransactions,
+  patchSavingsOrLoansBalance,
+  postSavingsOrLoansServiceTransactions,
+  postTransactions,
+};
