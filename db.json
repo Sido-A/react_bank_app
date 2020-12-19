@@ -7,128 +7,61 @@
       "email": "sido@email.com",
       "password": "sido",
       "avator": "url",
-      "wallet_balance": 34100.21,
-      "savings_balance": 12000.53,
+      "wallet_balance": 33750.21,
+      "savings_balance": 12350.53,
       "loans_balance": -1250.01,
       "wallet_transactions": [
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark",
-          "debit": "-",
-          "amount": 9.64
-        },
-        {
-          "transaction": "Spanser",
-          "debit": "+",
-          "amount": 10.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 11.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        },
-        {
-          "transaction": "Mark & Spanser",
-          "debit": "-",
-          "amount": 8.64
-        }
+        {"id": 1, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+        {"id": 2, "transaction": "Mark", "debit": "-", "amount": 9.64},
+        {"id": 3, "transaction": "Spanser", "debit": "+", "amount": 10.64},
+        {"id": 4, "transaction": "Mark & Spanser", "debit": "-", "amount": 11.64},
+        {"id": 5, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+        {"id": 6, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+        {"id": 7, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+        {"id": 8, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+        {"id": 9, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+        {"id": 10, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+
+        {"id": 11, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+
+{"id": 12, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+
+{"id": 13, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+
+{"id": 14, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+
+{"id": 15, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+
+{"id": 16, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+
+{"id": 17, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+
+{"id": 18, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64},
+
+{"id": 19, "transaction": "Mark & Spanser", "debit": "-", "amount": 8.64}
+
       ],
       "savings_transactions": [
         {
+          "id": 1,
           "transaction": "Direct deposit",
           "debit": "+",
           "amount": 400
         },
         {
+          "id": 2,
           "transaction": "Direct deposit",
           "debit": "+",
           "amount": 350
         },
         {
+          "id": 3,
           "transaction": "Rounded expense",
           "debit": "+",
           "amount": 0.73
         },
         {
+          "id": 4,
           "transaction": "Rounded expense",
           "debit": "+",
           "amount": 0.27
@@ -136,21 +69,25 @@
       ],
       "loans_transactions": [
         {
+          "id": 1,
           "transaction": "Thanks for payment",
           "debit": "+",
           "amount": 400
         },
         {
+          "id": 2,
           "transaction": "Thanks for payment",
           "debit": "+",
           "amount": 350
         },
         {
+          "id": 3,
           "transaction": "Thanks for payment",
           "debit": "+",
           "amount": 100
         },
         {
+          "id": 4,
           "transaction": "Loan",
           "debit": "-",
           "amount": 2100
@@ -169,21 +106,25 @@
       "loans_balance": -1250,
       "wallet_transactions": [
         {
+          "id": 1,
           "transaction": "Mark & Spanser",
           "debit": "-",
           "amount": 1.64
         },
         {
+          "id": 2,
           "transaction": "Mark",
           "debit": "-",
           "amount": 39.64
         },
         {
+          "id": 3,
           "transaction": "Spanser",
           "debit": "+",
           "amount": 100.64
         },
         {
+          "id": 4,
           "transaction": "Mark & Spanser",
           "debit": "-",
           "amount": 111.64
@@ -191,21 +132,25 @@
       ],
       "savings_transactions": [
         {
+          "id": 1,
           "transaction": "Direct deposit",
           "debit": "+",
           "amount": 400
         },
         {
+          "id": 2,
           "transaction": "Direct deposit",
           "debit": "+",
           "amount": 350
         },
         {
+          "id": 3,
           "transaction": "Rounded expense",
           "debit": "+",
           "amount": 0.73
         },
         {
+          "id": 4,
           "transaction": "Rounded expense",
           "debit": "+",
           "amount": 0.27
@@ -213,21 +158,25 @@
       ],
       "loans_transactions": [
         {
+          "id": 1,
           "transaction": "Thanks for payment",
           "debit": "+",
           "amount": 400
         },
         {
+          "id": 2,
           "transaction": "Thanks for payment",
           "debit": "+",
           "amount": 350
         },
         {
+          "id": 3,
           "transaction": "Thanks for payment",
           "debit": "+",
           "amount": 100
         },
         {
+          "id": 4,
           "transaction": "Loan",
           "debit": "-",
           "amount": 2100

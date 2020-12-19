@@ -45,7 +45,6 @@ function Balance({ color, service, setData }) {
         type: "WALLET_BALANCE",
         payload: totalWalletAmount,
       });
-      console.log("AFTER RETURN");
     } else {
       const totalWalletAmount = (walletBalance - amount).toFixed(2);
       patchWalletBalance(userData.id, totalWalletAmount);
@@ -64,6 +63,11 @@ function Balance({ color, service, setData }) {
     const capitalServiceType = typeOfService.toUpperCase();
     if (type === "plus") {
       const totalServiceOrLoansAmount = (currentBalance + amount).toFixed(2);
+      patchServiceOrLoansBalance(
+        userData.id,
+        `${service}_balance`,
+        totalServiceOrLoansAmount
+      );
 
       dispatch({
         type: `${capitalServiceType}_BALANCE`,
@@ -71,6 +75,12 @@ function Balance({ color, service, setData }) {
       });
     } else {
       const totalServiceOrLoansAmount = (currentBalance - amount).toFixed(2);
+      patchServiceOrLoansBalance(
+        userData.id,
+        `${service}_balance`,
+        totalServiceOrLoansAmount
+      );
+
       dispatch({
         type: `${capitalServiceType}_BALANCE`,
         payload: totalServiceOrLoansAmount,
@@ -86,24 +96,29 @@ function Balance({ color, service, setData }) {
 
     switch (inOrOut) {
       case "+wallet":
-        const dataStructure = {
-          transaction: "From Savings",
-          debit: "+",
+        const plusToWalletFromSavingOrLoans = {
+          transaction: `From ${service}`,
+          debit: "+", // plus to wallet
           amount,
         };
-        dispatch({
-          type: "WALLET_TRANSACTIONS",
-          payload: dataStructure,
-        });
-        // patchWalletTransactions(userData.id, dataStructure);
-        // patchServiceOrLoansBalance(userData.id, dataStructure);
+        // dispatch({
+        //   type: "WALLET_TRANSACTIONS",
+        //   payload: plusToWalletFromSavingOrLoans,
+        // });
+        patchWalletTransactions(userData.id, plusToWalletFromSavingOrLoans);
         calculateWalletAmount(walletBalance, amount, "plus");
         calculateServiceAndLoansBalanceAmount(currentBalance, amount, "minus");
-
         setInputAmount(0);
 
         return setShow(false);
       case "-wallet":
+        const minusFromWalletToSavingsOrLoans = {
+          transaction: `To ${service}`,
+          debit: "-", // minus to wallet
+          amount,
+        };
+
+        patchWalletTransactions(userData.id, minusFromWalletToSavingsOrLoans);
         calculateWalletAmount(walletBalance, amount, "minus");
         calculateServiceAndLoansBalanceAmount(currentBalance, amount, "plus");
         setInputAmount(0);

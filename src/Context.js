@@ -20,10 +20,7 @@ const reducer = (state, action) => {
       const parseWalletPayload = parseFloat(action.payload);
       return {
         ...state,
-        user: [
-          ...state.user,
-          (state.user[0]["wallet_balance"] = parseWalletPayload),
-        ],
+        user: [{ ...state.user[0], wallet_balance: parseWalletPayload }],
       };
 
     case "SAVINGS_BALANCE":
@@ -31,20 +28,14 @@ const reducer = (state, action) => {
 
       return {
         ...state,
-        user: [
-          ...state.user,
-          (state.user[0]["savings_balance"] = parseSavingsPayload),
-        ],
+        user: [{ ...state.user[0], savings_balance: parseSavingsPayload }],
       };
     case "LOANS_BALANCE":
       const parseLoansPayload = parseFloat(action.payload);
 
       return {
         ...state,
-        user: [
-          ...state.user,
-          (state.user[0]["loans_balance"] = parseLoansPayload),
-        ],
+        user: [{ ...state.user[0], loans_balance: parseLoansPayload }],
       };
     default:
       return state;
