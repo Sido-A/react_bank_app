@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useHistory,
 } from "react-router-dom";
 
 import "./App.css";
@@ -14,13 +13,11 @@ import Signup from "./components/Signup";
 import Balance from "./components/Balance";
 import Transactions from "./components/Transactions";
 import Settings from "./components/Settings";
-import { userDataContext } from "./Context";
 
 function App() {
   const [data, setData] = useState([]);
   const [showSettings, setShowSettings] = useState(false);
-  const userContext = useContext(userDataContext);
-  const { state, dispatch } = userContext;
+
 
   const toggleSettings = () => {
     setShowSettings(!showSettings);
@@ -35,17 +32,6 @@ function App() {
     };
     fetchData();
   }, []);
-
-  useEffect(() => {
-    // const db = "http://localhost:3001";
-    // const fetchData = async () => {
-    //   await fetch(`${db}/users`)
-    //     .then((res) => res.json())
-    //     .then((res) => setData(res));
-    // };
-    // fetchData();
-    console.log("data", data);
-  }, [state]);
 
   return (
     <Router>

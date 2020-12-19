@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 import logo from "../img/CH.png";
 import "../css/LoggedInHeader.css";
+import { userDataContext } from "../Context";
 
 function LoggedInHeader({ toggle }) {
+  const userContext = useContext(userDataContext);
+  const { state, dispatch } = userContext;
+
+  const signOut = () => {
+    dispatch({
+      type: "SIGN_OUT",
+    });
+  };
   return (
     <header className="loggedInHeader">
       <div className="loggedInHeader__inner">
@@ -34,7 +43,12 @@ function LoggedInHeader({ toggle }) {
               </a>
             </li>
             <li>
-              <NavLink className="loggedInHeader__link" to="/" exact>
+              <NavLink
+                onClick={signOut}
+                className="loggedInHeader__link"
+                to="/"
+                exact
+              >
                 <span>sign out</span>
               </NavLink>
             </li>

@@ -7,9 +7,9 @@
       "email": "sido@email.com",
       "password": "sido",
       "avator": "url",
-      "wallet_balance": 39320.21,
-      "savings_balance": 6530.53,
-      "loans_balance": -1000.01,
+      "wallet_balance": 36850.21,
+      "savings_balance": 10000.53,
+      "loans_balance": -2000.01,
       "wallet_transactions": [
         {
           "id": 1,
@@ -172,6 +172,30 @@
           "transaction": "To savings",
           "debit": "-",
           "amount": 25
+        },
+        {
+          "id": 28,
+          "transaction": "From savings",
+          "debit": "+",
+          "amount": 530
+        },
+        {
+          "id": 29,
+          "transaction": "From loans",
+          "debit": "+",
+          "amount": 1050
+        },
+        {
+          "id": 30,
+          "transaction": "To savings",
+          "debit": "-",
+          "amount": 4000
+        },
+        {
+          "id": 31,
+          "transaction": "To loans",
+          "debit": "-",
+          "amount": 50
         }
       ],
       "savings_transactions": [
@@ -228,6 +252,18 @@
           "transaction": "From wallet",
           "debit": "+",
           "amount": 25
+        },
+        {
+          "id": 10,
+          "transaction": "Took from savings",
+          "debit": "-",
+          "amount": 530
+        },
+        {
+          "id": 11,
+          "transaction": "From wallet",
+          "debit": "+",
+          "amount": 4000
         }
       ],
       "loans_transactions": [
@@ -266,6 +302,18 @@
           "transaction": "Thanks for payment",
           "debit": "+",
           "amount": 150
+        },
+        {
+          "id": 7,
+          "transaction": "Loan",
+          "debit": "-",
+          "amount": 1050
+        },
+        {
+          "id": 8,
+          "transaction": "Thanks for payment",
+          "debit": "+",
+          "amount": 50
         }
       ]
     },
@@ -364,14 +412,56 @@
       "email": "fl@email.com",
       "password": "fl",
       "avator": "",
+      "wallet_balance": 5900,
+      "savings_balance": 100,
+      "loans_balance": -1000,
+      "wallet_transactions": [
+        {
+          "id": 1,
+          "transaction": "To savings",
+          "debit": "-",
+          "amount": 100
+        },
+        {
+          "id": 2,
+          "transaction": "From loans",
+          "debit": "+",
+          "amount": 1000
+        }
+      ],
+      "savings_transactions": [
+        {
+          "id": 1,
+          "transaction": "From wallet",
+          "debit": "+",
+          "amount": 100
+        }
+      ],
+      "loans_transactions": [
+        {
+          "id": 1,
+          "transaction": "Loan",
+          "debit": "-",
+          "amount": 1000
+        }
+      ],
+      "confirmpassword": "fl",
+      "id": 3
+    },
+    {
+      "firstname": "Lucie",
+      "lastname": "Abe",
+      "email": "lucie@email.com",
+      "password": "lucie",
+      "avator": "",
       "wallet_balance": 5000,
       "savings_balance": 0,
       "loans_balance": 0,
       "wallet_transactions": [],
       "savings_transactions": [],
       "loans_transactions": [],
-      "confirmpassword": "fl",
-      "id": 3
+      "confirmpassword": "lucie",
+      "id": 4
     }
   ]
 }

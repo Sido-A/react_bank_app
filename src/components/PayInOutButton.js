@@ -6,13 +6,33 @@ function PayInOutButton({ service, showAndHide }) {
     <div className="payInOutButton">
       {service === "savings" ? (
         <div className="payInOutButton__right">
-          <p onClick={() => showAndHide("-wallet", service)}>Pay in</p>
-          <p onClick={() => showAndHide("+wallet", service)}>Pay out</p>
+          <p
+            className="payInOutButton__green"
+            onClick={() => showAndHide("-wallet", service)}
+          >
+            Pay in
+          </p>
+          <p
+            className="payInOutButton__grey"
+            onClick={() => showAndHide("+wallet", service)}
+          >
+            Pay out
+          </p>
         </div>
       ) : (
         <div className="payInOutButton__right">
-          <p onClick={() => showAndHide("+wallet", service)}>Take loan</p>
-          <p onClick={() => showAndHide("-wallet", service)}>Pay back</p>
+          <p
+            className="payInOutButton__blue"
+            onClick={() => showAndHide("+wallet", service)}
+          >
+            Take loan
+          </p>
+          <p
+            className="payInOutButton__grey"
+            onClick={() => showAndHide("-wallet", service)}
+          >
+            Pay back
+          </p>
         </div>
       )}
     </div>

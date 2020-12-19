@@ -2,13 +2,14 @@ import React, { createContext, useReducer } from "react";
 
 const initialState = {
   user: [],
+  blocked: false,
+  round: false,
 };
 
 const userDataContext = createContext(initialState);
 const { Provider } = userDataContext;
 
 const reducer = (state, action) => {
-  //   console.log(action);
   switch (action.type) {
     case "LOGIN":
       return {
@@ -81,6 +82,11 @@ const reducer = (state, action) => {
             ],
           },
         ],
+      };
+
+    case "SIGN_OUT":
+      return {
+        user: [],
       };
 
     default:

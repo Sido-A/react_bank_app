@@ -28,7 +28,6 @@ function Login({ userData, setData }) {
   const submitLogin = (e) => {
     e.preventDefault();
     const user = userData.filter((user) => user.email === inputForm.email);
-    // console.log(user[0]);
     if (user.length !== 0) {
       if (inputForm.password === user[0].password) {
         setData(user[0]);
@@ -43,7 +42,6 @@ function Login({ userData, setData }) {
       }
     } else {
       alert("Your email is not registered, you need to sign up");
-      // history.push("/signup");
     }
   };
 

@@ -7,9 +7,7 @@ import { userDataContext } from "../Context";
 import {
   patchWalletBalance,
   patchSavingsOrLoansBalance,
-  postWalletTransactions,
-  postSavingsOrLoansServiceTransactions,
-  postTransactions,
+  patchTransactions,
 } from "../fetch";
 
 function Balance({ color, service, setData }) {
@@ -20,8 +18,12 @@ function Balance({ color, service, setData }) {
   const userContext = useContext(userDataContext);
   const { state, dispatch } = userContext;
   const userData = state.user[0];
-  console.log(userData.wallet_transactions);
 
+  // Splitting balance to style after decimal
+  const splitBalance = userData[`${service}_balance`].toString().split(".");
+  const int = splitBalance[0];
+  const decimal = splitBalance[1];
+  console.log(decimal);
   const showAndHide = (plusOrMinus, serviceType) => {
     setInOrOut(plusOrMinus);
     setTypeOfService(serviceType);
@@ -118,7 +120,7 @@ function Balance({ color, service, setData }) {
             plusToWalletFromSavingOrLoans,
           ],
         };
-        postTransactions(userData.id, updatePlusWalletTransactions);
+        patchTransactions(userData.id, updatePlusWalletTransactions);
 
         if (service === "savings") {
           // minus from savings to wallet
@@ -142,7 +144,7 @@ function Balance({ color, service, setData }) {
               minusFromSavingToWallet,
             ],
           };
-          postTransactions(userData.id, updateMinusSavingsTransactions);
+          patchTransactions(userData.id, updateMinusSavingsTransactions);
         } else if (service === "loans") {
           // minus from loans to wallet
           const minusFromLoansToWallet = {
@@ -165,7 +167,7 @@ function Balance({ color, service, setData }) {
               minusFromLoansToWallet,
             ],
           };
-          postTransactions(userData.id, updateMinusLoansTransactions);
+          patchTransactions(userData.id, updateMinusLoansTransactions);
         }
         calculateWalletAmount(walletBalance, amount, "plus");
         calculateServiceAndLoansBalanceAmount(currentBalance, amount, "minus");
@@ -194,7 +196,7 @@ function Balance({ color, service, setData }) {
             minusFromWalletToSavingsOrLoans,
           ],
         };
-        postTransactions(userData.id, updateMinusWalletTransactions);
+        patchTransactions(userData.id, updateMinusWalletTransactions);
 
         if (service === "savings") {
           // plus to savings from wallet
@@ -218,7 +220,7 @@ function Balance({ color, service, setData }) {
               plusToSavingFromWallet,
             ],
           };
-          postTransactions(userData.id, updatePlusSavingsTransactions);
+          patchTransactions(userData.id, updatePlusSavingsTransactions);
         } else if (service === "loans") {
           const plusToSLoansFromWallet = {
             id: loansTransactionsId,
@@ -240,7 +242,7 @@ function Balance({ color, service, setData }) {
               plusToSLoansFromWallet,
             ],
           };
-          postTransactions(userData.id, updatePlusLoansTransactions);
+          patchTransactions(userData.id, updatePlusLoansTransactions);
         }
 
         calculateWalletAmount(walletBalance, amount, "minus");
@@ -254,7 +256,10 @@ function Balance({ color, service, setData }) {
     <div className="balance">
       <div className={`balance__inner`}>
         <div className={`balance__left  ${color} `}>
-          <p className="balance__total">{userData[`${service}_balance`]}</p>
+          <p className="balance__total">
+            {int}
+            <span>.{decimal === undefined ? "00" : decimal}</span>
+          </p>
           <p>Balance</p>
         </div>
         {service === "wallet" ? (

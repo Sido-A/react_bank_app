@@ -43,15 +43,20 @@
 
 .loginInput {
   color: #fff;
-  background-color: transparent;
+  background: linear-gradient(#3d4046 100%, #3d4046 0%);
   outline: none;
   border: none;
   border-bottom: 1px solid #f4613a;
-  padding: 5px 0;
+  padding: 5px 2px;
 }
 
 .login__loginFormInner > .login__email {
   margin-bottom: 1.313em;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 30px #3d4046 inset;
 }
 .login__loginFormInner > .login__password {
   margin-bottom: 2.625em;
